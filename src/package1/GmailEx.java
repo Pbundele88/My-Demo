@@ -1,0 +1,37 @@
+package package1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GmailEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String path="C:\\selenium\\chromeexe\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", path);
+		WebDriver driver= new ChromeDriver();
+		driver.navigate().to("https://accounts.google.com/signin/v2/sl/pwd?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+		driver.manage().window().maximize();
+	// driver.findElements(By.tagName("a"));
+	java.util.List<WebElement> list= driver.findElements(By.tagName("a"));	
+	//java.util.List<WebElement> list= driver.findElements(By.tagName("button"));
+	int count=list.size();
+	System.out.println("Total no of hyperlinks presents:" + count);
+	for (int i=0;i<count;i++){
+		String s=list.get(i).getText();
+		System.out.println(s);	
+		String s1=list.get(i).getAttribute("Help");
+		//String s1=list.get(i).getAttribute("Forgot email?");
+		System.out.println(s1);
+		if(s.equals("Help")){
+			list.get(i).click();
+		}
+		/*if(s.equals("Forgot email?")){
+			list.get(i).click();
+		}*/
+	}
+	}
+
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [selenium test]">
+  <parameter name="browserFlag" value="Chrome"/>
+  <test name="package1(failed)">
+    <parameter name="browserFlag" value="Chrome"/>
+    <classes>
+      <class name="package1.TestNg2">
+        <methods>
+          <include name="m11"/>
+          <include name="m6"/>
+          <include name="m1"/>
+          <include name="m2"/>
+          <include name="m4"/>
+        </methods>
+      </class> <!-- package1.TestNg2 -->
+    </classes>
+  </test> <!-- package1(failed) -->
+</suite> <!-- Failed suite [selenium test] -->

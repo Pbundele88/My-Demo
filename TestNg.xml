@@ -1,0 +1,15 @@
+<suite name="selenium test" thread-count="2" parallel=" methods">
+ <test verbose="2" name="package1">
+ <parameter name="browserFlag" value="Chrome"/>
+ <classes>
+<class name="package1.TestNg2" />
+ </classes>
+</test>
+<!--  <test verbose="2" name="package12">
+ <parameter name="browserFlag1" value="chrome"/>
+ <classes>
+<class name="package1.Parallel2" />
+ </classes>
+
+ </test>-->
+</suite>
